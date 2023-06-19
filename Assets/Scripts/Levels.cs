@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Map : MonoBehaviour
+public class Levels : MonoBehaviour
 {
     // Start is called before the first frame update
     // level 1 (11, 19). 
@@ -13,7 +13,8 @@ public class Map : MonoBehaviour
     // 3 - болван
     // 4 - крест
 
-    int[,] level1 =
+    public static Vector2 posLvl1 = new Vector2(8, 11); 
+    public static int[,] level1 =
          {{0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0},
           {0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0},
           {0,0,0,0,1,2,0,0,1,0,0,0,0,0,0,0,0,0,0},
@@ -26,17 +27,4 @@ public class Map : MonoBehaviour
           {0,0,0,0,1,0,0,0,0,0,1,1,1,1,1,1,1,1,1},
           {0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0}};
 
-
-
-
-    /*void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }*/
 }
