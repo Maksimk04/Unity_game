@@ -5,6 +5,8 @@ using System.Threading;
 using System.Timers;
 using System.Numerics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class StageGenScript : MonoBehaviour
 {
@@ -12,12 +14,28 @@ public class StageGenScript : MonoBehaviour
     public GameObject box;
     public GameObject cross;
 
-    static int[,] lvl_layout = Levels.level1;
+
+    public static int[,] lvl_layout; // = Levels.level1;
     // Start is called before the first frame update
 
 
     void Awake()
     {
+        string current_level = SceneManager.GetActiveScene().name;
+
+        switch (current_level)
+        {
+            case "level1":
+                Debug.Log(current_level);
+                lvl_layout = Levels.level1;
+                break;
+            case "level2":
+                lvl_layout = Levels.level2;
+                break;
+            default:
+                lvl_layout = Levels.level1;
+                break;
+        }
         for (int i = 0; i < lvl_layout.GetLength(0); i++)
         {
             for (int j = 0; j < lvl_layout.GetLength(1); j++)

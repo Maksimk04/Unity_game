@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        map = Levels.level1;
+        map = StageGenScript.lvl_layout;
         posx = (int)Levels.posLvl1.x;
         posy = (int)Levels.posLvl1.y;
     }
