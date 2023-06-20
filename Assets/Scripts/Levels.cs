@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Levels : MonoBehaviour
 {
-    // Start is called before the first frame update
     // level 1 (11, 19). 
     // player (8 ,11)
 
@@ -13,7 +12,7 @@ public class Levels : MonoBehaviour
     // 3 - болван
     // 4 - крест
 
-    public static Vector2 posLvl1 = new Vector2(8, 11); 
+    public static Vector2 posLvl1 = new Vector2(11, 8); 
     public static int[,] level1 =
          {{0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0},
           {0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0},
@@ -26,5 +25,4 @@ public class Levels : MonoBehaviour
           {1,1,1,1,1,0,1,1,1,0,1,3,1,1,0,0,4,4,1},
           {0,0,0,0,1,0,0,0,0,0,1,1,1,1,1,1,1,1,1},
           {0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0}};
-
 }
