@@ -13,9 +13,10 @@ public class StageGenScript : MonoBehaviour
     public GameObject wall;
     public GameObject box;
     public GameObject cross;
+    public GameObject player;
 
 
-    public static int[,] lvl_layout; // = Levels.level1;
+    public static int[,] lvl_layout;
     // Start is called before the first frame update
 
 
@@ -32,6 +33,12 @@ public class StageGenScript : MonoBehaviour
             case "level2":
                 lvl_layout = Levels.level2;
                 break;
+            case "level3":
+                lvl_layout = Levels.level3;
+                break;
+            //case "level4":
+            //    lvl_layout = Levels.level4;
+            //    break;
             default:
                 lvl_layout = Levels.level1;
                 break;
@@ -47,6 +54,9 @@ public class StageGenScript : MonoBehaviour
                         break;
                     case 2:
                         Instantiate(box, new UnityEngine.Vector3(j, -i, 0), UnityEngine.Quaternion.identity);
+                        break;
+                    case 3:
+                        Instantiate(player, new UnityEngine.Vector3(j, -i, 0), UnityEngine.Quaternion.identity);
                         break;
                     case 4:
                         Instantiate(cross, new UnityEngine.Vector3(j, -i, 0), UnityEngine.Quaternion.identity);

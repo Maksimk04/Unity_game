@@ -21,8 +21,11 @@ public class Movement : MonoBehaviour
     void Start()
     {
         map = StageGenScript.lvl_layout;
-        posx = (int)Levels.posLvl1.x;
-        posy = (int)Levels.posLvl1.y;
+        Vector2 posLvl = FindPlayer(map);
+        posx = (int)posLvl.x;
+        posy = (int)posLvl.y;
+        Debug.Log(posx);
+        Debug.Log(posy);
     }
 
     public static bool Move(Vector3 direction)
@@ -86,5 +89,22 @@ public class Movement : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public Vector2 FindPlayer(int[,] map)
+    {
+        for (int i = 0; i < map.GetLength(0); i++)
+        {
+            for (int j = 0; j < map.GetLength(1); j++)
+            {
+                //Debug.Log(map.GetLength(0));
+                //Debug.Log(map.GetLength(1));
+                if (map[i, j] == 3)
+                {
+                    return new Vector2(j, i);
+                }
+            }
+        }
+        return new Vector2(0, 0);
     }
 }

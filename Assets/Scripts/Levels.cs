@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Globalization;
 using UnityEngine;
 
 public class Levels : MonoBehaviour
@@ -9,6 +11,7 @@ public class Levels : MonoBehaviour
     // 4 - cross
 
     // 11 - x, 8 - y
+
     public static Vector2 posLvl1 = new Vector2(11, 8); 
     // level1 (19, 11) 
     public static int[,] level1 =
