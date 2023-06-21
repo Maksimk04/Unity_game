@@ -39,6 +39,9 @@ public class StageGenScript : MonoBehaviour
             case "level4":
                 lvl_layout = (int[,])Levels.level4.Clone();
                 break;
+            case "level5":
+                lvl_layout = (int[,])Levels.level5.Clone();
+                break;
             default:
                 lvl_layout = (int[,])Levels.level1.Clone();
                 break;
@@ -55,7 +58,7 @@ public class StageGenScript : MonoBehaviour
                         break;
                     case 2:
                         Instantiate(box, new UnityEngine.Vector3(j, -i, 0), UnityEngine.Quaternion.identity);
-                        Debug.Log("ящик создан");
+                        //Debug.Log("ящик создан");
                         break;
                     case 3:
                         Instantiate(player, new UnityEngine.Vector3(j, -i, 0), UnityEngine.Quaternion.identity);
