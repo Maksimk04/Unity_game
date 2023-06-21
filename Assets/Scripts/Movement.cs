@@ -62,30 +62,30 @@ public class Movement : MonoBehaviour
     {
         if (direction == Vector3.left && (map[posy, posx - 2] == 0 || map[posy, posx - 2] == 4))
         {
-            Box_moved.Invoke();
             map[posy, posx - 2] = 2;
             map[posy, posx - 1] = 0;
+            Box_moved.Invoke();
             return true;
         }
         else if (direction == Vector3.right && (map[posy, posx + 2] == 0 || map[posy, posx + 2] == 4))
         {
-            Box_moved.Invoke();
             map[posy, posx + 2] = 2;
             map[posy, posx + 1] = 0;
+            Box_moved.Invoke();
             return true;
         }
         else if (direction == Vector3.up && (map[posy - 2, posx] == 0 || map[posy - 2, posx] == 4))
         {
-            Box_moved.Invoke();
             map[posy - 2, posx] = 2;
             map[posy - 1, posx] = 0;
+            Box_moved.Invoke();
             return true;
         }
         else if (direction == Vector3.down && (map[posy + 2, posx] == 0 || map[posy + 2, posx] == 4))
         {
-            Box_moved.Invoke();
             map[posy + 2, posx] = 2;
             map[posy + 1, posx] = 0;
+            Box_moved.Invoke();
             return true;
         }
         return false;

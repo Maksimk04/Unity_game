@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class Levels : MonoBehaviour
@@ -13,6 +14,30 @@ public class Levels : MonoBehaviour
     // 5 - box on cross
 
     // 11 - x, 8 - y
+
+    public static int[,] find_crosses(int[,] mat)
+    {
+        int[,] crosses = new int[mat.GetLength(0), mat.GetLength(1)];
+        for (int i = 0; i < mat.GetLength(0); i++)
+        {
+            for (int j = 0; j < mat.GetLength(1); j++)
+            {
+                crosses[i, j] = ((mat[i, j] == 4 || mat[i,j] == 5) ? 4 : 0);
+            }
+        }
+        return crosses;
+    }
+
+    public static void replace_crosses(int[,] mat)
+    {
+        for (int i = 0; i < mat.GetLength(0); i++)
+        {
+            for (int j = 0; j < mat.GetLength(1); j++)
+            {
+                mat[i, j] = (mat[i, j] == 5 ? 2 : mat[i, j]);
+            }
+        }
+    }
 
     public static Vector2 posLvl1 = new Vector2(11, 8); 
     // level1 (19, 11) 

@@ -6,7 +6,7 @@ using System.Timers;
 using System.Numerics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using System;
 
 public class StageGenScript : MonoBehaviour
 {
@@ -17,8 +17,8 @@ public class StageGenScript : MonoBehaviour
 
 
     public static int[,] lvl_layout;
+    public static int[,] lvl_crosses;
     // Start is called before the first frame update
-
 
     void Awake()
     {
@@ -28,21 +28,22 @@ public class StageGenScript : MonoBehaviour
         {
             case "level1":
                 Debug.Log(current_level);
-                lvl_layout = Levels.level1;
+                lvl_layout = (int[,])Levels.level1.Clone();
                 break;
             case "level2":
-                lvl_layout = Levels.level2;
+                lvl_layout = (int[,])Levels.level2.Clone();
                 break;
             case "level3":
-                lvl_layout = Levels.level3;
+                lvl_layout = (int[,])Levels.level3.Clone();
                 break;
             case "level4":
-                lvl_layout = Levels.level4;
+                lvl_layout = (int[,])Levels.level4.Clone();
                 break;
             default:
-                lvl_layout = Levels.level1;
+                lvl_layout = (int[,])Levels.level1.Clone();
                 break;
         }
+        
         for (int i = 0; i < lvl_layout.GetLength(0); i++)
         {
             for (int j = 0; j < lvl_layout.GetLength(1); j++)
@@ -71,6 +72,8 @@ public class StageGenScript : MonoBehaviour
                 }
             }
         }
+        lvl_crosses = Levels.find_crosses(lvl_layout);
+        Levels.replace_crosses(lvl_layout);
     }
     void Start()
     {
