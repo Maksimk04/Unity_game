@@ -28,19 +28,19 @@ public class StageGenScript : MonoBehaviour
         {
             case "level1":
                 Debug.Log(current_level);
-                lvl_layout = Levels.level1;
+                lvl_layout = Levels.level1_ref;
                 break;
             case "level2":
-                lvl_layout = Levels.level2;
+                lvl_layout = Levels.level2_ref;
                 break;
             case "level3":
-                lvl_layout = Levels.level3;
+                lvl_layout = Levels.level3_ref;
                 break;
             //case "level4":
             //    lvl_layout = Levels.level4;
             //    break;
             default:
-                lvl_layout = Levels.level1;
+                lvl_layout = Levels.level1_ref;
                 break;
         }
         for (int i = 0; i < lvl_layout.GetLength(0); i++)
@@ -54,6 +54,7 @@ public class StageGenScript : MonoBehaviour
                         break;
                     case 2:
                         Instantiate(box, new UnityEngine.Vector3(j, -i, 0), UnityEngine.Quaternion.identity);
+                        Debug.Log("ящик создан");
                         break;
                     case 3:
                         Instantiate(player, new UnityEngine.Vector3(j, -i, 0), UnityEngine.Quaternion.identity);
