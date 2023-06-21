@@ -3,14 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
-using UnityEditor.PackageManager;
-using UnityEditorInternal;
+//using UnityEditor.PackageManager;
+//using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Movement : MonoBehaviour
 {
-    // добавить логику определения лвла.  
     public static int[,] map;
     public static int posx;
     public static int posy;

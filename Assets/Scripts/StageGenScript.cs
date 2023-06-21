@@ -58,7 +58,6 @@ public class StageGenScript : MonoBehaviour
                         break;
                     case 2:
                         Instantiate(box, new UnityEngine.Vector3(j, -i, 0), UnityEngine.Quaternion.identity);
-                        //Debug.Log("ящик создан");
                         break;
                     case 3:
                         Instantiate(player, new UnityEngine.Vector3(j, -i, 0), UnityEngine.Quaternion.identity);
