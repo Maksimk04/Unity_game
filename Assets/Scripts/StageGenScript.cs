@@ -36,9 +36,9 @@ public class StageGenScript : MonoBehaviour
             case "level3":
                 lvl_layout = Levels.level3;
                 break;
-            //case "level4":
-            //    lvl_layout = Levels.level4;
-            //    break;
+            case "level4":
+                lvl_layout = Levels.level4;
+                break;
             default:
                 lvl_layout = Levels.level1;
                 break;
@@ -61,6 +61,10 @@ public class StageGenScript : MonoBehaviour
                         break;
                     case 4:
                         Instantiate(cross, new UnityEngine.Vector3(j, -i, 0), UnityEngine.Quaternion.identity);
+                        break;
+                    case 5:
+                        Instantiate(cross, new UnityEngine.Vector3(j, -i, 0), UnityEngine.Quaternion.identity);
+                        Instantiate(box, new UnityEngine.Vector3(j, -i, 0), UnityEngine.Quaternion.identity);
                         break;
                     default:
                         break;
