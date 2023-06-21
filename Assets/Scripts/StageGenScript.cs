@@ -28,19 +28,19 @@ public class StageGenScript : MonoBehaviour
         {
             case "level1":
                 Debug.Log(current_level);
-                lvl_layout = Levels.level1_ref;
+                lvl_layout = Levels.level1;
                 break;
             case "level2":
-                lvl_layout = Levels.level2_ref;
+                lvl_layout = Levels.level2;
                 break;
             case "level3":
-                lvl_layout = Levels.level3_ref;
+                lvl_layout = Levels.level3;
                 break;
             //case "level4":
             //    lvl_layout = Levels.level4;
             //    break;
             default:
-                lvl_layout = Levels.level1_ref;
+                lvl_layout = Levels.level1;
                 break;
         }
         for (int i = 0; i < lvl_layout.GetLength(0); i++)

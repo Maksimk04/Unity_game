@@ -11,7 +11,7 @@ using UnityEngine.Events;
 public class Movement : MonoBehaviour
 {
     // добавить логику определения лвла.  
-    static int[,] map;
+    public static int[,] map;
     public static int posx;
     public static int posy;
     public static Vector3 pl_direction;
@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        map = StageGenScript.lvl_layout;
+        map = (int[,])StageGenScript.lvl_layout.Clone();
         Vector2 posLvl = FindPlayer(map);
         posx = (int)posLvl.x;
         posy = (int)posLvl.y;
