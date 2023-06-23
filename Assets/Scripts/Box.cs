@@ -59,19 +59,20 @@ public class Box : MonoBehaviour
         Vector3 Pos = BoxPos + direction;
 
         //transform.position = transform.position + direction;
-        while (time < 0.15f)
+        while (time < 0.14f)
         {
             transform.position = Vector3.Lerp(BoxPos, Pos, (time / 0.15f));
             time += Time.deltaTime;
             yield return null;
         }
+        transform.position = Pos;
         time = 0;
         while (time < 0.01f)
         {
             time += Time.deltaTime;
             yield return null;
         }
-        transform.position = Pos;
+        
 
     }
 }
