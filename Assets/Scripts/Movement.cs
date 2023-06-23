@@ -23,8 +23,6 @@ public class Movement : MonoBehaviour
         Vector2 posLvl = FindPlayer(map);
         posx = (int)posLvl.x;
         posy = (int)posLvl.y;
-        Debug.Log(posx);
-        Debug.Log(posy);
     }
 
     public static bool Move(Vector3 direction)
@@ -96,8 +94,6 @@ public class Movement : MonoBehaviour
         {
             for (int j = 0; j < map.GetLength(1); j++)
             {
-                //Debug.Log(map.GetLength(0));
-                //Debug.Log(map.GetLength(1));
                 if (map[i, j] == 3)
                 {
                     return new Vector2(j, i);

@@ -77,14 +77,4 @@ public class StageGenScript : MonoBehaviour
         lvl_crosses = Levels.find_crosses(lvl_layout);
         Levels.replace_crosses(lvl_layout);
     }
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
