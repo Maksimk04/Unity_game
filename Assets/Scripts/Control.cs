@@ -6,6 +6,7 @@ public class Control : MonoBehaviour
 {
     SpriteRenderer sprite;
     private bool Moving = false;
+    private KeyCode last = KeyCode.None;
 
     void Start()
     {
@@ -14,27 +15,54 @@ public class Control : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) && !Moving)
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) && !Moving && 
+            last != KeyCode.W)
         {
-            StartCoroutine(MovePlayer(Vector3.up));
+            last = KeyCode.W;
+            StartCoroutine(MovePlayer(Vector3.up, KeyCode.UpArrow));
         }
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) && !Moving)
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) && !Moving &&
+            last != KeyCode.S)
         {
-            StartCoroutine(MovePlayer(Vector3.down));
+            last= KeyCode.S;
+            StartCoroutine(MovePlayer(Vector3.down, KeyCode.DownArrow));
         }
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) && !Moving)
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) && !Moving &&
+            last != KeyCode.A)
         {
-            StartCoroutine(MovePlayer(Vector3.left));
+            last = KeyCode.A;
+            StartCoroutine(MovePlayer(Vector3.left, KeyCode.LeftArrow));
             sprite.flipX = false;
         }
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) && !Moving)
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) && !Moving && 
+            last != KeyCode.D)
         {
-            StartCoroutine(MovePlayer(Vector3.right));
+            last = KeyCode.D;
+            StartCoroutine(MovePlayer(Vector3.right, KeyCode.RightArrow));
+            sprite.flipX = true;
+        }
+        else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow) && !Moving)
+        {
+            last = KeyCode.W;
+            StartCoroutine(MovePlayer(Vector3.up, KeyCode.UpArrow));
+        }
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow) && !Moving)
+        {
+            StartCoroutine(MovePlayer(Vector3.down, KeyCode.DownArrow));
+        }
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow) && !Moving)
+        {
+            StartCoroutine(MovePlayer(Vector3.left, KeyCode.LeftArrow));
+            sprite.flipX = false;
+        }
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow) && !Moving)
+        {
+            StartCoroutine(MovePlayer(Vector3.right, KeyCode.RightArrow));
             sprite.flipX = true;
         }
     }
 
-    private IEnumerator MovePlayer(Vector3 direction)
+    private IEnumerator MovePlayer(Vector3 direction, KeyCode but)
     {
         Moving = true;
         float time = 0;
@@ -51,12 +79,15 @@ public class Control : MonoBehaviour
                 yield return null;
             }
             transform.position = Pos;
-            time = 0;
-            while (time < 0.01f)
+            if (Input.GetKey(but))
             {
-                //transform.position = Vector3.Lerp(BoxPos, Pos, (time / 0.15f));
-                time += Time.deltaTime;
-                yield return null;
+                time = 0;
+                while (time < 0.01f)
+                {
+                    //transform.position = Vector3.Lerp(BoxPos, Pos, (time / 0.15f));
+                    time += Time.deltaTime;
+                    yield return null;
+                }
             }
         }
         Moving = false;
