@@ -79,7 +79,7 @@ public class Control : MonoBehaviour
                 yield return null;
             }
             transform.position = Pos;
-            if (Input.GetKey(but))
+            /*if (Input.GetKey(but))
             {
                 time = 0;
                 while (time < 0.01f)
@@ -87,7 +87,7 @@ public class Control : MonoBehaviour
                     time += Time.deltaTime;
                     yield return null;
                 }
-            }
+            }*/
         }
         Moving = false;
     }

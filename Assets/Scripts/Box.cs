@@ -66,12 +66,12 @@ public class Box : MonoBehaviour
             yield return null;
         }
         transform.position = Pos;
-        time = 0;
+        /*time = 0;
         while (time < 0.01f)
         {
             time += Time.deltaTime;
             yield return null;
-        }
+        }*/
         
 
     }
