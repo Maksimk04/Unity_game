@@ -9,9 +9,12 @@ public class LevelManagerScript : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
     public void BackToMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
