@@ -21,25 +21,25 @@ public class Box : MonoBehaviour
 
         if (direction == Vector3.right && box_pos.x == pos.x + 1 && box_pos.y == pos.y)
         {
-            Move(direction, box_pos);
+            StartCoroutine(Move(direction, box_pos));
         }
         else if (direction == Vector3.left && box_pos.x == pos.x - 1 && box_pos.y == pos.y)
         {
-            Move(direction, box_pos);
+            StartCoroutine(Move(direction, box_pos));
         }
         else if (direction == Vector3.down && box_pos.x == pos.x && box_pos.y == pos.y - 1)
         {
-            Move(direction, box_pos);
+            StartCoroutine(Move(direction, box_pos));
         }
         else if (direction == Vector3.up && box_pos.x == pos.x && box_pos.y == pos.y + 1)
         {
-            Move(direction, box_pos);
+            StartCoroutine(Move(direction, box_pos));
         }
     }
 
-    private void Move(Vector3 direction, Vector2 BoxPos)
+    private IEnumerator Move(Vector3 direction, Vector3 BoxPos)
     {
-        if (direction == Vector3.up)
+        /*if (direction == Vector3.up)
         {
             Transform.position = new Vector2(BoxPos.x, BoxPos.y + 1);
         }
@@ -54,6 +54,25 @@ public class Box : MonoBehaviour
         else if (direction == Vector3.right)
         {
             Transform.position = new Vector2(BoxPos.x + 1, BoxPos.y);
+        }*/
+        float time = 0;
+        Vector3 Pos = BoxPos + direction;
+
+        //transform.position = transform.position + direction;
+        while (time < 0.14f)
+        {
+            transform.position = Vector3.Lerp(BoxPos, Pos, (time / 0.15f));
+            time += Time.deltaTime;
+            yield return null;
         }
+        transform.position = Pos;
+        /*time = 0;
+        while (time < 0.01f)
+        {
+            time += Time.deltaTime;
+            yield return null;
+        }*/
+        
+
     }
 }

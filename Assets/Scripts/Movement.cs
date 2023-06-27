@@ -23,8 +23,6 @@ public class Movement : MonoBehaviour
         Vector2 posLvl = FindPlayer(map);
         posx = (int)posLvl.x;
         posy = (int)posLvl.y;
-        Debug.Log(posx);
-        Debug.Log(posy);
     }
 
     public static bool Move(Vector3 direction)
@@ -59,28 +57,28 @@ public class Movement : MonoBehaviour
 
     static bool IsBoxAbleToMove(Vector3 direction)
     {
-        if (direction == Vector3.left && (map[posy, posx - 2] == 0 || map[posy, posx - 2] == 4))
+        if (direction == Vector3.left && (map[posy, posx - 2] == 0 || map[posy, posx - 2] == 4 || map[posy, posx - 2] == 3))
         {
             map[posy, posx - 2] = 2;
             map[posy, posx - 1] = 0;
             Box_moved.Invoke();
             return true;
         }
-        else if (direction == Vector3.right && (map[posy, posx + 2] == 0 || map[posy, posx + 2] == 4))
+        else if (direction == Vector3.right && (map[posy, posx + 2] == 0 || map[posy, posx + 2] == 4 || map[posy, posx + 2] == 3))
         {
             map[posy, posx + 2] = 2;
             map[posy, posx + 1] = 0;
             Box_moved.Invoke();
             return true;
         }
-        else if (direction == Vector3.up && (map[posy - 2, posx] == 0 || map[posy - 2, posx] == 4))
+        else if (direction == Vector3.up && (map[posy - 2, posx] == 0 || map[posy - 2, posx] == 4 || map[posy - 2, posx] == 3))
         {
             map[posy - 2, posx] = 2;
             map[posy - 1, posx] = 0;
             Box_moved.Invoke();
             return true;
         }
-        else if (direction == Vector3.down && (map[posy + 2, posx] == 0 || map[posy + 2, posx] == 4))
+        else if (direction == Vector3.down && (map[posy + 2, posx] == 0 || map[posy + 2, posx] == 4 || map[posy + 2, posx] == 3))
         {
             map[posy + 2, posx] = 2;
             map[posy + 1, posx] = 0;
@@ -96,8 +94,6 @@ public class Movement : MonoBehaviour
         {
             for (int j = 0; j < map.GetLength(1); j++)
             {
-                //Debug.Log(map.GetLength(0));
-                //Debug.Log(map.GetLength(1));
                 if (map[i, j] == 3)
                 {
                     return new Vector2(j, i);
