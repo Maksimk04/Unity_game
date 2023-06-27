@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO.Pipes;
 using System.Threading;
 using System.Timers;
-using System.Numerics;
+//using System.Numerics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
@@ -14,7 +14,7 @@ public class StageGenScript : MonoBehaviour
     public GameObject box;
     public GameObject cross;
     public GameObject player;
-
+    public Transform cam;
 
     public static int[,] lvl_layout;
     public static int[,] lvl_crosses;
@@ -24,6 +24,8 @@ public class StageGenScript : MonoBehaviour
     void Awake()
     {
         lvl_layout = (int[,])Levels.levels[level_id].Clone();
+        cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        cam.position = new Vector3(lvl_layout.GetLength(1) / 2, lvl_layout.GetLength(0) / -2, -10);
 
         for (int i = 0; i < lvl_layout.GetLength(0); i++)
         {
@@ -52,6 +54,7 @@ public class StageGenScript : MonoBehaviour
                 }
             }
         }
+        
         lvl_crosses = Levels.find_crosses(lvl_layout);
         Levels.replace_crosses(lvl_layout);
     }
