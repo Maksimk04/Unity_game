@@ -5,25 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayLvl1()
+    public void PlayLevel(int id)
     {
-        SceneManager.LoadScene("level1");
-    }
-    public void PlayLvl2()
-    {
-        SceneManager.LoadScene("level2");
-    }
-    public void PlayLvl3()
-    {
-        SceneManager.LoadScene("level3");
-    }
-    public void PlayLvl4()
-    {
-        SceneManager.LoadScene("level4");
-    }
-    public void PlayLvl5()
-    {
-        SceneManager.LoadScene("level5");
+        StageGenScript.level_id = id;
+        SceneManager.LoadScene("Level_test");
     }
 
     public void ExitGame()

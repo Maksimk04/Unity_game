@@ -15,6 +15,10 @@ public class LevelManagerScript : MonoBehaviour
     }
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (StageGenScript.level_id != Levels.levels.Count)
+        {
+            StageGenScript.level_id += 1;
+            SceneManager.LoadScene("Level_test");
+        }
     }
 }

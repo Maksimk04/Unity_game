@@ -23,30 +23,6 @@ public class StageGenScript : MonoBehaviour
 
     void Awake()
     {
-        string current_level = SceneManager.GetActiveScene().name;
-
-        //switch (current_level)
-        //{
-        //    case "level1":
-        //        Debug.Log(current_level);
-        //        lvl_layout = (int[,])Levels.level1.Clone();
-        //        break;
-        //    case "level2":
-        //        lvl_layout = (int[,])Levels.level2.Clone();
-        //        break;
-        //    case "level3":
-        //        lvl_layout = (int[,])Levels.level3.Clone();
-        //        break;
-        //    case "level4":
-        //        lvl_layout = (int[,])Levels.level4.Clone();
-        //        break;
-        //    case "level5":
-        //        lvl_layout = (int[,])Levels.level5.Clone();
-        //        break;
-        //    default:
-        //        lvl_layout = (int[,])Levels.level1.Clone();
-        //        break;
-        //}
         lvl_layout = (int[,])Levels.levels[level_id].Clone();
 
         for (int i = 0; i < lvl_layout.GetLength(0); i++)
