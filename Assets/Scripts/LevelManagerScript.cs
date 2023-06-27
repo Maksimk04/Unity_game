@@ -20,5 +20,9 @@ public class LevelManagerScript : MonoBehaviour
             StageGenScript.level_id += 1;
             SceneManager.LoadScene("Level_test");
         }
+        else
+        {
+            // сказать что чел хорош и всё прошёл
+        }
     }
 }
