@@ -15,6 +15,17 @@ public class Control : MonoBehaviour
 
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            LevelManagerScript.ReloadLevel();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            LevelManagerScript.LoadNextLevel();
+        }
+
         if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) && !Moving && 
             last != KeyCode.W)
         {

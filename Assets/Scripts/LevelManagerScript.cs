@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManagerScript : MonoBehaviour
 {
-    public void ReloadLevel()
+    public static void ReloadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -13,7 +13,7 @@ public class LevelManagerScript : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
-    public void LoadNextLevel()
+    public static void  LoadNextLevel()
     {
         if (StageGenScript.level_id != Levels.levels.Count)
         {
