@@ -171,7 +171,6 @@ public class Levels : MonoBehaviour
           {1,0,0,0,1,1,1},
           {1,1,1,1,1,0,0}};
 
-<<<<<<< Updated upstream
     public static int[,] level15 =
          {{0,0,0,1,1,1,1,0,0,0},
           {0,1,1,1,0,0,1,1,1,1},
@@ -184,9 +183,6 @@ public class Levels : MonoBehaviour
           {1,1,1,1,0,0,0,0,0,0}};
 
     public static int[,] level16 =
-=======
-    public static int[,] level11 =
->>>>>>> Stashed changes
          {{0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0},
           {0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0},
           {0,0,0,0,1,2,0,0,1,0,0,0,0,0,0,0,0,0,0},
@@ -248,7 +244,7 @@ public class Levels : MonoBehaviour
           {1,1,1,0,0,1,0,0,1,0,0},
           {0,0,1,1,1,1,1,1,1,0,0}};
 
-    public static int[,] level16 =
+    public static int[,] level21 =
          {{0,0,1,1,1,1,0,0,0},
           {1,1,1,0,0,1,1,1,1},
           {1,0,0,0,0,0,2,0,1},
@@ -256,7 +252,7 @@ public class Levels : MonoBehaviour
           {1,0,4,0,4,1,3,0,1},
           {1,1,1,1,1,1,1,1,1}};
 
-    public static int[,] level17 =
+    public static int[,] level22 =
          {{1,1,1,1,0,0},
           {1,0,4,1,0,0},
           {1,0,0,1,1,1},
@@ -265,7 +261,7 @@ public class Levels : MonoBehaviour
           {1,0,0,1,1,1},
           {1,1,1,1,0,0}};
 
-    public static int[,] level18 =
+    public static int[,] level23 =
          {{1,1,1,1,1,0},
           {1,4,0,0,1,1},
           {1,3,2,2,0,1},
@@ -274,7 +270,7 @@ public class Levels : MonoBehaviour
           {0,0,1,1,4,1},
           {0,0,0,1,1,1}};
 
-    public static int[,] level19 =
+    public static int[,] level24 =
          {{1,1,1,1,1,0},
           {1,0,3,0,1,0},
           {1,4,4,4,1,0},
@@ -283,7 +279,7 @@ public class Levels : MonoBehaviour
           {1,0,0,0,0,1},
           {1,1,1,1,1,1}};
 
-    public static int[,] level20 =
+    public static int[,] level25 =
           {{1,1,1,1,1,1,1},
           {1,0,0,0,0,0,1},
           {1,0,1,0,1,0,1},
@@ -291,7 +287,7 @@ public class Levels : MonoBehaviour
           {1,0,0,0,1,1,1},
           {1,1,1,1,1,0,0}};
 
-    public static int[,] level21 =
+    public static int[,] level26 =
          {{1,1,1,1,1,0,0},
           {1,0,0,0,1,0,0},
           {1,0,3,0,1,0,0},
@@ -300,7 +296,7 @@ public class Levels : MonoBehaviour
           {0,1,0,0,0,0,1},
           {0,1,1,1,1,1,1}};
 
-    public static int[,] level22 =
+    public static int[,] level27 =
          {{0,0,1,1,1,1,0},
           {0,1,1,0,0,1,0},
           {1,1,3,2,4,1,1},
@@ -309,7 +305,7 @@ public class Levels : MonoBehaviour
           {1,1,1,0,0,0,1},
           {0,0,1,1,1,1,1}};
 
-    public static int[,] level23 =
+    public static int[,] level28 =
         {{1,1,1,1,1,1,1},
           {1,4,0,1,0,0,1},
           {1,0,0,2,0,0,1},
@@ -318,7 +314,7 @@ public class Levels : MonoBehaviour
           {1,4,0,1,0,0,1},
           {1,1,1,1,1,1,1}};
 
-    public static int[,] level24 =
+    public static int[,] level29 =
          {{1,1,1,1,1,1,1,1,1,1},
           {1,0,0,0,0,0,0,0,0,1},
           {1,0,1,1,4,1,1,1,0,1},
@@ -327,7 +323,7 @@ public class Levels : MonoBehaviour
           {1,1,1,1,1,0,0,0,0,1},
           {0,0,0,0,1,1,1,1,1,1}};
 
-    public static int[,] level25 =
+    public static int[,] level30 =
          {{0,0,0,1,1,1,1},
           {0,0,0,1,0,0,1},
           {0,0,0,1,3,0,1},
@@ -337,7 +333,7 @@ public class Levels : MonoBehaviour
           {1,0,0,0,0,1,1},
           {1,1,1,1,1,1,0}};
 
-    public static int[,] level26 =
+    public static int[,] level31 =
          {{0,1,1,1,1,1,1},
           {1,1,0,0,0,0,1},
           {1,0,0,1,1,0,1},
@@ -347,7 +343,7 @@ public class Levels : MonoBehaviour
           {0,1,0,0,0,1,0},
           {0,1,1,1,1,1,0}};
 
-    public static int[,] level27 =
+    public static int[,] level32 =
          {{0,0,1,1,1,1},
           {1,1,1,0,3,1},
           {1,0,0,2,0,1},
@@ -357,7 +353,7 @@ public class Levels : MonoBehaviour
           {1,1,1,0,0,1},
           {0,0,1,1,1,1}};
 
-    public static int[,] level28 =
+    public static int[,] level33 =
          {{0,1,1,1,1,1,0},
           {1,1,4,0,4,1,1},
           {1,0,5,0,5,0,1},
@@ -366,7 +362,7 @@ public class Levels : MonoBehaviour
           {1,1,0,3,0,1,1},
           {0,1,1,1,1,1,0}};
 
-    public static int[,] level29 =
+    public static int[,] level34 =
          {{0,0,1,1,1,1,0,0},
           {0,0,1,0,0,1,0,0},
           {0,0,1,3,0,1,0,0},
@@ -379,11 +375,6 @@ public class Levels : MonoBehaviour
 
     public static List<int[,]> levels = new List<int[,]>()
     {
-        level16,
-        level17,
-        level18,
-        level19,
-        level20,
         level21,
         level22,
         level23,
@@ -393,6 +384,11 @@ public class Levels : MonoBehaviour
         level27,
         level28,
         level29,
+        level30,
+        level31,
+        level32,
+        level33,
+        level34,
         level1,
         level2,
         level3,
